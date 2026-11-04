@@ -1,0 +1,34 @@
+---------------Two pointers
+-----------------------1.Removing specific eleemnt
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter array size:");
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        System.out.print("Enter Array elments:");
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        System.out.print("enter an element to remove:");
+        int val = sc.nextInt();
+        int left=0;
+        int right=0;
+        while(right<n){
+            if(a[right]!=val){
+                a[left]=a[right];
+                left++;
+              
+                
+            }
+            right++;
+        }
+        System.out.println("remainimg length"+left);
+        System.out.print("updated array:");
+        for(int i=0;i<left;i++){
+            System.out.println(a[i]+" ");
+        }
+        sc.close();
+    }
+}
