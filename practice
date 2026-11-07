@@ -143,3 +143,42 @@ public class Main{
         sc.close();
     }
 }
+--------------------Trapped rain water
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc  = new Scanner(System.in);
+        System.out.print("Enter Array Size:");
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        System.out.print("Enter Array Elments:");
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        int left=0;
+        int right=n-1;
+        int leftMax=0;
+        int rightMax=0;
+        int water=0;
+        while(left<right){
+            if(a[left]<a[right]){
+                if(a[left]>=leftMax){
+                    leftMax=a[left];
+                }else{
+                    water += leftMax-a[left];
+                }
+                left++;
+            }
+            else{
+                if(a[right]>=rightMax){
+                    rightMax=a[right];
+                }else{
+                    water += rightMax-a[right];
+                }
+                right--;
+            }
+        }
+        System.out.println("Trapped rainWater:"+water);
+        sc.close();
+    }
+}
