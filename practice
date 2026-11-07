@@ -111,4 +111,35 @@ public class Main {
         sc.close();
     }
 }
-
+--------------Squares of sorted array
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter array size:");
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        System.out.print("Enter array Elments:");
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        int [] result = new int[n];
+        int left=0;
+        int right=n-1;
+        int index=n-1;
+        while(left<=right){
+            int leftsquare=a[left]*a[left];
+            int rightsquare=a[right]*a[right];
+            if(leftsquare>rightsquare){
+                result[index]=leftsquare;
+                left++;
+            }else{
+                result[index]=rightsquare;
+                right--;
+            }
+            index--;
+        }
+        System.out.println("Square sorted array:"+Arrays.toString(result));
+        sc.close();
+    }
+}
